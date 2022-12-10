@@ -1,0 +1,28 @@
+"Stettiner.Test:Content.News":
+  superTypes:
+    "Neos.Neos:Content": true
+    "Stettiner.Test:Mixin.Image": true
+  ui:
+    label: News
+    icon: news
+    position: 300
+    inlineEditable: true
+  properties:
+    image:
+      ui:
+        inspector:
+          group: "image"
+      options:
+        preset: "image.asset"
+    alternativeText:
+      ui:
+        inspector:
+          group: "image"
+      options:
+        preset: "image.alternativeText"
+    title:
+      options:
+        preset: "text.free"
+    description:
+      options:
+        preset: "text.free"

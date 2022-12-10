@@ -1,0 +1,39 @@
+prototype(Stettiner.Test:Content.News) < prototype(Neos.Neos:ContentComponent) {
+    
+    lazy = ${q(node).prev().is()}
+
+    src = Neos.Fusion:Case {
+        image {
+            condition = ${q(node).property('image') ? true : false}
+            renderer = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
+            }
+        }
+        dummyImage {
+            condition = ${site.context.inBackend}
+            renderer = Sitegeist.Kaleidoscope:DummyImageSource
+        }
+    }
+    alternativeText = ${q(node).property('alternativeText')}
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    description = Neos.Neos:Editable {
+        property = 'description'
+    }
+
+    renderer = afx`
+        <div class="underSection container">
+            <Sitegeist.Lazybones:Image
+            lazy={true}
+            imageSource={props.src}
+            sizes={props.sizes}
+            alt={props.alternativeText}
+            />
+            {props.title}
+            {props.description}
+        </div>
+    `
+}
