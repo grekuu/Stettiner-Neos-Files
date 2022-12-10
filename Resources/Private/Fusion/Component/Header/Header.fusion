@@ -1,0 +1,45 @@
+prototype(Stettiner.Test:Component.Header) < prototype(Neos.Fusion:Component) {
+    homeLink = Neos.Neos:NodeUri {
+        node = ${site}
+    }
+    menuItems = Neos.Neos:MenuItems {
+        startingPoint = ${site}
+        maximumLevels = 2
+    }
+
+
+
+    logoUri = Neos.Fusion:ResourceUri {
+        path = 'resource://Stettiner.Test/Resources/Public/Frontend/img/stettiner.png'
+    }
+
+    renderer = afx`
+    <nav>
+      <a class="navbar-item border-none" href={props.homeLink}>
+        <img src="https://perspektive.stettiner.it/wp-content/uploads/2016/12/logo2.png" width="112" height="28" />
+      </a>
+      <a class="navbar-item">
+        O nas
+      </a>
+      <a class="navbar-item">
+        Usługi
+      </a>
+      <a class="navbar-item">
+        Aktualności
+      </a>
+      <a class="navbar-item">
+        Kontakt
+      </a>
+    </nav>
+    `
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			documentNode = ${documentNode}
+		}
+		entryTags {
+			1 = ${Neos.Caching.nodeTypeTag('Neos.Neos:Document', documentNode)}
+		}
+	}
+}

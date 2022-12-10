@@ -1,0 +1,99 @@
+prototype(Stettiner.Test:Content.ImagesRow) < prototype(Neos.Neos:ContentComponent) {
+
+// 1
+    lazy = ${q(node).prev().is()}
+
+    src = Neos.Fusion:Case {
+        image {
+            condition = ${q(node).property('image') ? true : false}
+            renderer = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
+            }
+        }
+        dummyImage {
+            condition = ${site.context.inBackend}
+            renderer = Sitegeist.Kaleidoscope:DummyImageSource
+        }
+    }
+    alternativeText = ${q(node).property('alternativeText')}
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+// 2
+    lazy = ${q(node).prev().is()}
+
+    src1 = Neos.Fusion:Case {
+        image1 {
+            condition = ${q(node).property('image1') ? true : false}
+            renderer = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image1')}
+            }
+        }
+        dummyImage {
+            condition = ${site.context.inBackend}
+            renderer = Sitegeist.Kaleidoscope:DummyImageSource
+        }
+    }
+    alternativeText1 = ${q(node).property('alternativeText1')}
+
+    text1 = Neos.Neos:Editable {
+        property = 'text1'
+    }
+// 3
+    lazy = ${q(node).prev().is()}
+
+    src2 = Neos.Fusion:Case {
+        image2 {
+            condition = ${q(node).property('image2') ? true : false}
+            renderer = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image2')}
+            }
+        }
+        dummyImage {
+            condition = ${site.context.inBackend}
+            renderer = Sitegeist.Kaleidoscope:DummyImageSource
+        }
+    }
+    alternativeText2 = ${q(node).property('alternativeText2')}
+
+    text2 = Neos.Neos:Editable {
+        property = 'text2'
+    }
+
+
+    renderer = afx`
+    <div class="container-flex">
+        <div class="zoom-container">
+       <Sitegeist.Lazybones:Image
+            class="container-image"
+            lazy={true}
+            imageSource={props.src}
+            sizes={props.sizes}
+            alt={props.alternativeText}
+            />
+            <div class="image-text">{props.text}</div>
+            </div>
+            <div class="zoom-container">
+            <Sitegeist.Lazybones:Image
+            class="container-image"
+            lazy={true}
+            imageSource={props.src1}
+            sizes={props.sizes}
+            alt={props.alternativeText1}
+            />
+            <div class="image-text">{props.text1}</div>
+            </div>
+            <div class="zoom-container">
+            <Sitegeist.Lazybones:Image
+            class="container-image"
+            lazy={true}
+            imageSource={props.src2}
+            sizes={props.sizes}
+            alt={props.alternativeText2}
+            />
+            <div class="image-text">{props.text2}</div>
+            </div>
+    </div>
+    `
+}

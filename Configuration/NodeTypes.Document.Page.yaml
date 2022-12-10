@@ -1,0 +1,7 @@
+'Stettiner.Test:Document.Page':
+  superTypes:
+    'Stettiner.Test:Document.AbstractPage': true
+  ui:
+    label: i18n
+    icon: file-o
+    position: 100

@@ -1,0 +1,21 @@
+prototype(Stettiner.Test:Content.Button) < prototype(Neos.Neos:ContentComponent) {
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+    link = ${q(node).property('link')}
+    shouldBeNewTab = ${q(node).property('shouldBeNewTab') ? '_blank' : '_self'}
+    shouldBeRendered = ${site.context.inBackend ? false : true}
+
+    jsHref = ${"location.href='" + q(node).property('link') + "';"}
+
+    renderer = afx`
+        <div @if.render={props.shouldBeRendered} class="stettiner-btn container" onclick={props.jsHref}>
+            <p href={props.link} target={props.shouldBeNewTab} class="stettiner-btn-text">{props.title}</p>
+        </div>
+
+
+        <div @if.render={!props.shouldBeRendered} class="stettiner-btn container">
+            <p href={props.link} target={props.shouldBeNewTab} class="stettiner-btn-text">{props.title}</p>
+        </div>
+    `
+}

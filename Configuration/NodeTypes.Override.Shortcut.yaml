@@ -1,0 +1,5 @@
+
+'Neos.Neos:Shortcut':
+  constraints:
+    nodeTypes:
+      'Stettiner.Test:Constraint.Document.Restricted': false

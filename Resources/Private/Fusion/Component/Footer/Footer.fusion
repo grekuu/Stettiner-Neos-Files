@@ -1,0 +1,29 @@
+prototype(Stettiner.Test:Component.Footer) < prototype(Neos.Neos:ContentComponent) {
+    @context.node = ${site}
+    year = ${Date.format(Date.now(), 'Y')}
+    footerInfo = Neos.Neos:Editable {
+        node = ${site}
+        property = 'footerInfo'
+    }
+    footerItems = ${q(site).property('footerItems')}
+
+    renderer = afx`
+        <footer class="footer main-footer">
+  <div class="content has-text-centered">
+    <p>
+      Gracjan Prusik
+    </p>
+  </div>
+</footer>
+    `
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            site = ${site}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(site)}
+        }
+    }
+}

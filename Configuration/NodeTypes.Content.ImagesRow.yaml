@@ -1,0 +1,55 @@
+'Stettiner.Test:Content.ImagesRow':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Stettiner.Test:Mixin.Image': true
+  ui:
+    label: 'ImagesRow'
+    icon: icon-image
+    position: 500
+    inlineEditable: true
+  properties:
+    image:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.asset'
+    alternativeText:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.alternativeText'
+    image1:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.asset'
+    alternativeText1:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.alternativeText'
+    image2:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.asset'
+    alternativeText2:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.alternativeText'
+    text:
+      options:
+        preset: 'text.free'
+    text1:
+      options:
+        preset: 'text.free'
+    text2:
+      options:
+        preset: 'text.free'

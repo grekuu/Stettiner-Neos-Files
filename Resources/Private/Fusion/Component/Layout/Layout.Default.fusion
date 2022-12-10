@@ -1,0 +1,9 @@
+prototype(Stettiner.Test:Component.Layout.Default) < prototype(Neos.Fusion:Component) {
+    content = ''
+
+    renderer = afx`
+        <Stettiner.Test:Component.Header />
+        {props.content}
+        <Stettiner.Test:Component.Footer />
+    `
+}

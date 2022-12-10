@@ -1,0 +1,13 @@
+'Stettiner.Test:Document.AbstractPage':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'Stettiner.Test:Constraint.Content.Restricted': false
+  constraints:
+    nodeTypes:
+      'Stettiner.Test:Constraint.Document.Restricted': false

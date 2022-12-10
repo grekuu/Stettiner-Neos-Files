@@ -1,0 +1,18 @@
+'Stettiner.Test:Content.UnderSection':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'UnderSection'
+    icon: icon-section
+    position: 60
+    inlineEditable: true
+  properties:
+    title:
+      options:
+        preset: 'text.title'
+    text:
+      ui:
+        inspector:
+          group: 'text'
+      options:
+        preset: 'text.free'

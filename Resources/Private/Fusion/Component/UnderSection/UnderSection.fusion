@@ -1,0 +1,17 @@
+prototype(Stettiner.Test:Content.UnderSection) < prototype(Neos.Neos:ContentComponent) {
+    
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <div class="underSection container">
+            {props.title}
+            {props.text}
+        </div>
+    `
+}

@@ -1,0 +1,28 @@
+'Stettiner.Test:Content.Hero':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Stettiner.Test:Mixin.Image': true
+  ui:
+    label: 'Hero'
+    icon: icon-picture
+    position: 50
+    inlineEditable: true
+  properties:
+    text:
+      ui:
+        inspector:
+          group: 'text'
+      options:
+        preset: 'text.free'
+    image:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.asset'
+    alternativeText:
+      ui:
+        inspector:
+          group: 'image'
+      options:
+        preset: 'image.alternativeText'
