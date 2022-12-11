@@ -1,0 +1,22 @@
+prototype(Stettiner.Test:Content.MapContact) < prototype(Neos.Neos:ContentComponent) {
+    
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <div class="mapContact-container">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.613025831625!2d14.535050316024067!3d53.43962707542093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aa09471ea78be7%3A0xf989355e28c0773f!2sPerspektive%20s.c.!5e0!3m2!1spl!2spl!4v1670758353307!5m2!1spl!2spl" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="text">
+                {props.title}
+                {props.text}
+            </div>
+        </div>
+    `
+}
