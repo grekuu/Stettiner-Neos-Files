@@ -19,22 +19,22 @@ prototype(Stettiner.Test:Content.ContactForm) < prototype(Neos.Neos:ContentCompo
                     <div style="display: flex; min-width: 100%; gap: 20px;">
                         <div class="single-input" >
                             <label for="imie">Imię:*</label>
-                            <input type="text" id="imie" name="imie" style="width: auto"/>
+                            <input type="text" id="imie" name="imie" style="width: auto" placeholder="Jan"/>
                         </div>
                         <div class="single-input" >
                             <label for="telefon">Telefon:</label>
-                            <input type="text" id="telefon" name="telefon" style="width: auto"/>
+                            <input type="text" id="telefon" name="telefon" style="width: auto" placeholder="123 456 789"/>
                         </div>
                     </div>
                     <div class="single-input">
                         <label for="email">Email:*</label>
-                        <input type="text" id="email" name="email"/>
+                        <input type="text" id="email" name="email" placeholder="JanKowalski@gmail.com"/>
                     </div>
                     <div class="single-input">
                         Wiadomość:*
-                        <textarea></textarea>
+                        <textarea placeholder="Piszę w sprawie..." style="resize: vertical;"></textarea>
                     </div>
-                    <button>WYŚLIJ WIADOMOŚĆ</button>
+                    <button class="background-blue button">WYŚLIJ WIADOMOŚĆ</button>
                 </div>
             </form>
         </div>
