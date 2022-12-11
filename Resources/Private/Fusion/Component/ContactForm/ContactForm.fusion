@@ -1,0 +1,42 @@
+prototype(Stettiner.Test:Content.ContactForm) < prototype(Neos.Neos:ContentComponent) {
+    
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <div class="contactForm-container">
+            <div class="text">
+                {props.title}
+                {props.text}
+            </div>
+            <form>
+                <div class="display-flex">
+                    <div style="display: flex; min-width: 100%; gap: 20px;">
+                        <div class="single-input" >
+                            <label for="imie">Imię:*</label>
+                            <input type="text" id="imie" name="imie" style="width: auto"/>
+                        </div>
+                        <div class="single-input" >
+                            <label for="telefon">Telefon:</label>
+                            <input type="text" id="telefon" name="telefon" style="width: auto"/>
+                        </div>
+                    </div>
+                    <div class="single-input">
+                        <label for="email">Email:*</label>
+                        <input type="text" id="email" name="email"/>
+                    </div>
+                    <div class="single-input">
+                        Wiadomość:*
+                        <textarea></textarea>
+                    </div>
+                    <button>WYŚLIJ WIADOMOŚĆ</button>
+                </div>
+            </form>
+        </div>
+    `
+}
