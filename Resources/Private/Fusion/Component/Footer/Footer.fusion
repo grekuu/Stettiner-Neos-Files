@@ -11,7 +11,6 @@ prototype(Stettiner.Test:Component.Footer) < prototype(Neos.Neos:ContentComponen
         <footer class="footer main-footer">
   <div class="content has-text-centered">
     <p>
-      Gracjan Prusik
     </p>
   </div>
 </footer>

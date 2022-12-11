@@ -25,15 +25,18 @@ prototype(Stettiner.Test:Content.News) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <div class="underSection container">
+        <div class="news-container">
             <Sitegeist.Lazybones:Image
             lazy={true}
+            class="news-image"
             imageSource={props.src}
             sizes={props.sizes}
             alt={props.alternativeText}
             />
-            {props.title}
-            {props.description}
+            <div class="news-text">
+                <div class="news-title">{props.title}</div>
+                <div class="news-description">{props.description}</div>
+            </div>
         </div>
     `
 }
