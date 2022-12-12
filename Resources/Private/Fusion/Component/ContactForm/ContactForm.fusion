@@ -16,14 +16,14 @@ prototype(Stettiner.Test:Content.ContactForm) < prototype(Neos.Neos:ContentCompo
             </div>
             <form>
                 <div class="display-flex">
-                    <div style="display: flex; min-width: 100%; gap: 20px;">
+                    <div class="two-inputs">
                         <div class="single-input" >
                             <label for="imie">Imię:*</label>
-                            <input type="text" id="imie" name="imie" style="width: auto" placeholder="Jan"/>
+                            <input type="text" id="imie" name="imie" class="width-auto" placeholder="Jan"/>
                         </div>
                         <div class="single-input" >
                             <label for="telefon">Telefon:</label>
-                            <input type="text" id="telefon" name="telefon" style="width: auto" placeholder="123 456 789"/>
+                            <input type="text" id="telefon" name="telefon" class="width-auto" placeholder="123 456 789"/>
                         </div>
                     </div>
                     <div class="single-input">

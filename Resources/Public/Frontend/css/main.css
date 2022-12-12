@@ -242,6 +242,7 @@ hr {
   display: flex;
   margin-top: 50px;
   margin-bottom: 50px;
+  max-width: 100vw;
 }
 
 .mapContact-container > .text {
@@ -258,12 +259,17 @@ hr {
 
 /* ContactForm */
 .contactForm-container {
-  max-width: 1320px !important;
+  width: 1320px;
+  max-width: 100vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   text-align: left;
   gap: 100px;
+}
+
+.width-auto {
+  width: auto;
 }
 
 .contactForm-container > .text > p {
@@ -276,6 +282,12 @@ hr {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+
+.two-inputs {
+  display: flex;
+  min-width: 100%;
+  gap: 20px;
 }
 
 form {
@@ -336,6 +348,10 @@ textarea {
     max-width: 100vw;
   }
 
+  .section {
+    padding: 0;
+  }
+
   .items {
     display: flex;
     flex-direction: column;
@@ -352,6 +368,57 @@ textarea {
 
   .icon-blue {
     font-size: 20px;
+  }
+
+  /* MapContact */
+  .mapContact-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+  }
+
+  .map > iframe {
+    max-width: 100vw;
+  }
+
+  .mapContact-container > .text {
+    padding: 20px;
+  }
+
+  /* ContactForm */
+  .contactForm-container {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .width-auto,
+  .single-input > input,
+  .single-input > textarea {
+    width: 90vw !important;
+  }
+
+  .two-inputs {
+    flex-direction: column;
+  }
+
+  /* News */
+  .news-container {
+    padding: 20px;
+  }
+
+  /* Hero */
+  .hero-container {
+    max-width: 100vw;
+    padding: 20px;
+  }
+
+  .hero-text {
+    margin: 0;
+    font-size: 1.35em;
   }
 }
 
