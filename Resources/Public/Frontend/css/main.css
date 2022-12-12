@@ -323,7 +323,7 @@ textarea {
   display: none;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1368px) {
   .hide-mobile {
     display: none;
   }
@@ -350,6 +350,7 @@ textarea {
 
   .section {
     padding: 0;
+    padding-bottom: 50px !important;
   }
 
   .items {
@@ -393,6 +394,11 @@ textarea {
     text-align: left;
     gap: 20px;
     align-items: center;
+  }
+
+  .contactForm-container > .text {
+    max-width: 90vw;
+    margin-left: 10px;
   }
 
   .width-auto,
