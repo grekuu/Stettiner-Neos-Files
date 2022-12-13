@@ -72,7 +72,7 @@ prototype(Stettiner.Test:Content.ImagesRow) < prototype(Neos.Neos:ContentCompone
             sizes={props.sizes}
             alt={props.alternativeText}
             />
-            <div class="image-text">{props.text}</div>
+            <div class="image-text text-white">{props.text}</div>
             </div>
             <div class="zoom-container">
             <Sitegeist.Lazybones:Image
@@ -82,7 +82,7 @@ prototype(Stettiner.Test:Content.ImagesRow) < prototype(Neos.Neos:ContentCompone
             sizes={props.sizes}
             alt={props.alternativeText1}
             />
-            <div class="image-text">{props.text1}</div>
+            <div class="image-text text-white">{props.text1}</div>
             </div>
             <div class="zoom-container">
             <Sitegeist.Lazybones:Image
@@ -92,7 +92,7 @@ prototype(Stettiner.Test:Content.ImagesRow) < prototype(Neos.Neos:ContentCompone
             sizes={props.sizes}
             alt={props.alternativeText2}
             />
-            <div class="image-text">{props.text2}</div>
+            <div class="image-text text-white">{props.text2}</div>
             </div>
     </div>
     `

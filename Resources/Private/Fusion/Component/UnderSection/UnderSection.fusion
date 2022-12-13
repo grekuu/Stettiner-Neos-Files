@@ -9,7 +9,7 @@ prototype(Stettiner.Test:Content.UnderSection) < prototype(Neos.Neos:ContentComp
     }
 
     renderer = afx`
-        <div class="underSection container">
+        <div class="underSection container" id="uslugi">
             {props.title}
             {props.text}
         </div>
