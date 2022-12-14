@@ -26,6 +26,7 @@ prototype(Stettiner.Test:Content.News) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`
         <div class="news-container" id="aktualnosci">
+            <a href={props.alternativeText}>
             <Sitegeist.Lazybones:Image
             lazy={true}
             class="news-image"
@@ -33,6 +34,7 @@ prototype(Stettiner.Test:Content.News) < prototype(Neos.Neos:ContentComponent) {
             sizes={props.sizes}
             alt={props.alternativeText}
             />
+            </a>
             <div class="news-text">
                 <div class="news-title">{props.title}</div>
                 <div class="news-description">{props.description}</div>

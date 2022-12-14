@@ -14,7 +14,7 @@ prototype(Stettiner.Test:Component.Header) < prototype(Neos.Fusion:Component) {
     }
 
     renderer = afx`
-    <nav id="home">
+    <nav >
       <a class="navbar-item border-none" href={props.homeLink}>
         <img src="https://perspektive.stettiner.it/wp-content/uploads/2016/12/logo2.png" width="112" height="28" />
       </a>

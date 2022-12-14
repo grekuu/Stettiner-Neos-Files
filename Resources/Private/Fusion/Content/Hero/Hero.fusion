@@ -5,7 +5,7 @@ prototype(Stettiner.Test:Content.Hero) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-    <div class="hero-container">
+    <div class="hero-container" id="home">
         <div class="img">
             <Sitegeist.Lazybones:Image
                 class="hero"
