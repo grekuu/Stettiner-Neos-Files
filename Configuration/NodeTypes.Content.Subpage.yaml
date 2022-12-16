@@ -1,0 +1,25 @@
+"Stettiner.Test:Content.Subpage":
+  superTypes:
+    "Neos.Neos:Content": true
+    "Stettiner.Test:Mixin.Image": true
+  ui:
+    label: Subpage
+    icon: subpage
+    position: 300
+    inlineEditable: true
+  properties:
+    image:
+      ui:
+        inspector:
+          group: "image"
+      options:
+        preset: "image.asset"
+    alternativeText:
+      ui:
+        inspector:
+          group: "image"
+      options:
+        preset: "image.alternativeText"
+    description:
+      options:
+        preset: "text.free"

@@ -339,6 +339,18 @@ textarea {
   margin-top: 10px;
   margin-bottom: 150px;
 }
+/* Subpage */
+.subpage-image {
+  width: 100vw;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.subpage-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 /* MOBILE */
 

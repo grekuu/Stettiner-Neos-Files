@@ -1,0 +1,37 @@
+prototype(Stettiner.Test:Content.Subpage) < prototype(Neos.Neos:ContentComponent) {
+    
+    lazy = ${q(node).prev().is()}
+
+    src = Neos.Fusion:Case {
+        image {
+            condition = ${q(node).property('image') ? true : false}
+            renderer = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
+            }
+        }
+        dummyImage {
+            condition = ${site.context.inBackend}
+            renderer = Sitegeist.Kaleidoscope:DummyImageSource
+        }
+    }
+    alternativeText = ${q(node).property('alternativeText')}
+
+    description = Neos.Neos:Editable {
+        property = 'description'
+    }
+
+    renderer = afx`
+        <div class="subpage-container">
+            <Sitegeist.Lazybones:Image
+            lazy={true}
+            class="subpage-image"
+            imageSource={props.src}
+            sizes={props.sizes}
+            alt={props.alternativeText}
+            />
+            <div class="container-flex subpage-text">
+                <div class="subpage-description">{props.description}</div>
+            </div>
+        </div>
+    `
+}
