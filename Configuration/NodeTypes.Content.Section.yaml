@@ -1,8 +1,8 @@
-'Stettiner.Test:Content.Section':
+"Stettiner.Test:Content.Section":
   superTypes:
-    'Neos.Neos:Content': true
+    "Neos.Neos:Content": true
   ui:
-    label: 'Section'
+    label: "Section"
     icon: icon-section
     position: 50
     inlineEditable: true
@@ -10,54 +10,54 @@
     text00:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text01:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text02:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text11:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text12:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text13:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text21:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text22:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"
     text23:
       ui:
         inspector:
-          group: 'text'
+          group: "text"
       options:
-        preset: 'text.free'
+        preset: "text.free"

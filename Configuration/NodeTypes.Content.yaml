@@ -1,0 +1,9 @@
+"Stettiner.Test:Box":
+  superTypes:
+    "Neos.Neos:Node": true
+  ui:
+    label: box
+    icon: "icon-box"
+  constraints:
+    nodeTypes:
+      "*": true

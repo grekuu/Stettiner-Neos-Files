@@ -12,6 +12,7 @@ prototype(Stettiner.Test:Content.Section) < prototype(Neos.Neos:ContentComponent
     text02 = Neos.Neos:Editable {
         property = 'text02'
     }
+    
 
     // 2
     text11 = Neos.Neos:Editable {
