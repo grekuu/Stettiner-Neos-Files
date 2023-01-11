@@ -1,0 +1,6 @@
+prototype(Stettiner.Test:Boxes) < prototype(Neos.Fusion:Tag) {
+  tagName = 'div'
+  content = Neos.Neos:ContentCollection {  
+
+  }
+}

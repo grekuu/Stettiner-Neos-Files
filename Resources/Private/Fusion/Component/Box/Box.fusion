@@ -1,84 +1,24 @@
-# This is a helper Fusion object which is used to render all of the child elements
-# of a current node.
-prototype(Stettiner.Test:ContentCollectionRenderer) < prototype(Neos.Fusion:Loop) {
-  @context.nodeAvailable = ${node && String.length(node.context.workspace.name)}
-  # Set context removedContentShown to get removed nodes too.
-  # Needed for publish function to be able to publish removed nodes.
-  items = ${nodeAvailable ? q(node).children() : []}
+prototype(Stettiner.Test:Box) < prototype(Neos.Neos:ContentComponent) {
 
-  # To ensure backwards compatibility override items if collection is set
-  items.@process.collectionLegacy = ${this.collection}
-  items.@process.collectionLegacy.@if.hasCollectionProp = ${this.collection != null && Array.length(this.collection) > 0}
-
-  # Render every item by its own Fusion object
-  itemRenderer = Stettiner.Test:ContentCase
-  itemName = 'node'
-  iterationName = 'iterator'
-
-  @exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\BubblingHandler'
-}
-
-prototype(Stettiner.Test:Box) < prototype(Neos.Fusion:Tag) {
-  tagName = 'div'
-
-  attributes = Neos.Fusion:DataStructure
-
-  # The following is used to automatically append class and data attribute needed for editing.
-  # You can disable the behavior in your site's Fusion with:
-  # prototype(Neos.Neos:ContentCollection) {
-  #   attributes.class.@process.collectionClass >
-  # }
-  attributes {
-    class.@process.collectionClass = Neos.Fusion:Value {
-      castedArray = ${Type.isArray(value) ? value : [value]}
-      value = ${Array.push(this.castedArray, 'neos-contentcollection')}
-    }
-    data-__neos-insertion-anchor = true
-    data-__neos-insertion-anchor.@if.onlyRenderInBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
-  }
-
-  # Doesn't need to be set, if the node is a content collection.
-  nodePath = 'to-be-set-by-user'
-
-  # You may override this to get your content collection from a different place than the current node.
-  # The Eel helper is used to provide a better error message if no content collection could be found.
-  @context.node = ${Neos.Node.nearestContentCollection(node, this.nodePath)}
-
-  content = Stettiner.Test:ContentCollectionRenderer
-
-  # We have to define contentElementWrapping, because we do not inherit from Neos.Neos:Content
-  @process.contentElementWrapping = Stettiner.Test:ContentElementWrapping
-
-  @cache {
-    mode = 'cached'
-
-    entryIdentifier {
-      collection = ${node}
+    text00 = Neos.Neos:Editable {
+        property = 'text00'
     }
 
-    entryTags {
-      # A cache entry with this tag will be flushed
-			# whenever a node (for any variant) that is a descendant (child on any level)
-			# of one of the given nodes is updated.
-      1 = ${Neos.Caching.descendantOfTag(node)}
-      # A cache entry with this tag will be flushed
-			# whenever one of the given nodes (for any variant) is updated.
-      2 = ${Neos.Caching.nodeTag(node)}
-    }
+    renderer = afx`
+    <!-- 1 -->
+    <div class="mobile-flex" id="oNas">
+    <div class="section background-blue" style="margin-bottom: 50px;">
+        <div class="container-flex">
+        <div class="items ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon icon-white"><path d="M160 0c17.7 0 32 14.3 32 32V67.7c1.6 .2 3.1 .4 4.7 .7c10.6 1.6 42.1 6.7 55.1 10c17.1 4.3 27.5 21.7 23.2 38.9s-21.7 27.5-38.9 23.2c-9.3-2.4-37.6-7-48.9-8.7c-32.1-4.8-59.6-2.4-78.5 4.9c-18.3 7-25.9 16.9-27.9 28c-1.9 10.7-.5 16.8 1.3 20.6c1.9 4 5.6 8.5 12.9 13.4c16.2 10.8 41.1 17.9 73.3 26.7l2.8 .8c28.4 7.7 63.2 17.2 89 34.3c14.1 9.4 27.3 22.1 35.5 39.7c8.3 17.8 10.1 37.8 6.3 59.1c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.1c-.4-.1-.9-.1-1.3-.2l-.2 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.2-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.4 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.7 .5-16.8-1.3-20.6c-1.9-4-5.6-8.5-12.9-13.4c-16.2-10.8-41.1-17.9-73.3-26.7l-2.8-.8c-28.4-7.7-63.2-17.2-89-34.3c-14.1-9.4-27.3-22.1-35.5-39.7c-8.3-17.8-10.1-37.8-6.3-59.1C25 114.1 53 89.3 86 76.7c13-5 27.2-8.2 42-10V32c0-17.7 14.3-32 32-32z"/></svg>
+            <hr class="hide-mobile"> </hr>
+            <div class="section-text text-white">  
+                {props.text00}
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+	`
 
-    maximumLifetime = ${q(node).context({'invisibleContentShown': true}).children().cacheLifetime()}
-  }
-
-  @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
-}
-
-prototype(Stettiner.Test:Box) {
-  prototype(Stettiner.Test:Box) {
-    # Make nested ContentCollections be embedded by default.
-    # Usually there's no need for a separate cache entry for nested ContentCollections, but depending on the use-case
-    # the mode can safely be switched to 'cached'.
-    @cache {
-      mode = 'embed'
-    }
-  }
 }
