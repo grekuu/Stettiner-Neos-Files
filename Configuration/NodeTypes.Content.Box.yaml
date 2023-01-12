@@ -1,4 +1,4 @@
-"Stettiner.Test:Box":
+"Stettiner.Test:Content.Box":
   superTypes:
     "Neos.Neos:Content": true
   ui:

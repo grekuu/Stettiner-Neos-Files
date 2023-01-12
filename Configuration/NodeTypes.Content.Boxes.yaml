@@ -1,9 +1,9 @@
-"Stettiner.Test:Boxes":
+"Stettiner.Test:Content.Boxes":
   superTypes:
     "Neos.Neos:Content": true
     "Neos.Neos:ContentCollection": true
   ui:
-    label: boxes
+    label: Boxes
     icon: "icon-box"
     position: 1
   constraints:

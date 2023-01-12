@@ -1,4 +1,4 @@
-prototype(Stettiner.Test:Box) < prototype(Neos.Neos:ContentComponent) {
+prototype(Stettiner.Test:Content.Box) < prototype(Neos.Neos:ContentComponent) {
 
     text00 = Neos.Neos:Editable {
         property = 'text00'
@@ -6,7 +6,7 @@ prototype(Stettiner.Test:Box) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`
     <!-- 1 -->
-    <div class="mobile-flex" id="oNas">
+    
     <div class="section background-blue" style="margin-bottom: 50px;">
         <div class="container-flex">
         <div class="items ">
@@ -17,7 +17,6 @@ prototype(Stettiner.Test:Box) < prototype(Neos.Neos:ContentComponent) {
             </div>
         </div>
         </div>
-    </div>
     </div>
 	`
 
