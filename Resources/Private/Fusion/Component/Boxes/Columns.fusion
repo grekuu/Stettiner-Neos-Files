@@ -1,4 +1,7 @@
-prototype(Stettiner.Test:Content.Columns) < prototype(Neos.Neos:ContentCollection) {
-    @context.node = ${node}
-    attributes.class = 'columns'																		    
+prototype(Stettiner.Test:Content.Columns) < prototype(Stettiner.Test:Component.ContentCollection) {
+    renderer = afx`
+        <div class="columns">
+            <Neos.Neos:ContentCollectionRenderer/>
+        </div>
+    `
 }

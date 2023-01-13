@@ -21,7 +21,10 @@
 // 	`
 // }
 
-prototype(Stettiner.Test:Content.Column) < prototype(Neos.Neos:ContentCollection) {
-    @context.node = ${node}
-    attributes.class = 'column'
+prototype(Stettiner.Test:Content.Column) < prototype(Stettiner.Test:Component.ContentCollection) {
+    renderer = afx`
+        <div class="column">
+            <Neos.Neos:ContentCollectionRenderer/>
+        </div>
+    `
 }
