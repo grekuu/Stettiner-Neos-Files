@@ -1,0 +1,13 @@
+"Stettiner.Test:Mixin.Column":
+  abstract: true
+  superTypes:
+    "Neos.Neos:Content": true
+    "Neos.Neos:ContentCollection": true
+  ui:
+    label: "Column"
+    icon: columns
+    group: "structure"
+
+"Stettiner.Test:Content.Column":
+  superTypes:
+    "Stettiner.Test:Mixin.Column": true

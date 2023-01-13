@@ -1,7 +1,0 @@
-prototype(Stettiner.Test:Content.Boxes) < prototype(Neos.Neos:ContentComponent) {
-    renderer = afx`
-        <div class="mobile-flex" id="oNas">
-            <Neos.Neos:ContentCollectionRenderer/>
-        </div>
-    `
-}
