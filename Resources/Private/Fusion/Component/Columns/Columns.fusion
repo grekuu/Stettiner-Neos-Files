@@ -1,0 +1,4 @@
+prototype(Stettiner.Test:Content.Columns) < prototype(Neos.Neos:ContentCollection) {
+    @context.node = ${node}
+    attributes.class = 'columns'																		    
+}
