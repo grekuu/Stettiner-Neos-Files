@@ -8,5 +8,5 @@
     group: "structure"
   constraints:
     nodeTypes:
-      "*": false
+      "*": true
       "Stettiner.Test:Content.Column": true

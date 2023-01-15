@@ -373,6 +373,18 @@ textarea {
   margin-bottom: 50px;
 }
 
+.column {
+  width: 33%;
+  background-color: #0082b9;
+  justify-content: center;
+  padding: 10px 0px;
+  color: white;
+}
+
+.columns {
+  display: flex;
+}
+
 /* MOBILE */
 
 .hide-desktop {

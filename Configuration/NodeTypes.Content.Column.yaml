@@ -7,6 +7,13 @@
     label: "Column"
     icon: columns
     group: "structure"
+  properties:
+    text00:
+      ui:
+        inspector:
+          group: "text"
+      options:
+        preset: "text.free"
 
 "Stettiner.Test:Content.Column":
   superTypes:
